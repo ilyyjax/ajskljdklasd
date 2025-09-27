@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Exit</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: "Courier New", monospace;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 4rem;
+      letter-spacing: 0.3rem;
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+    h1:hover {
+      text-shadow: 0 0 20px #fff;
+      transform: scale(1.05);
+    }
+
+    .orbit {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 400px;
+      height: 400px;
+      margin: -200px 0 0 -200px;
+      border-radius: 50%;
+      animation: rotate 20s linear infinite;
+      z-index: 1;
+    }
+
+    .orbit img {
+      position: absolute;
+      width: 80px;
+      transition: all 0.3s ease;
+    }
+
+    .orbit img:hover {
+      filter: drop-shadow(0 0 15px white);
+      transform: scale(1.1);
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .twitter {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .twitter:hover {
+      filter: drop-shadow(0 0 15px white);
+      transform: scale(1.2);
+    }
+    .twitter img {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>The Exit</h1>
+
+  <div class="orbit">
+    <img src="mask.png" style="top:0; left:50%; transform:translateX(-50%);" />
+    <img src="mask.png" style="top:50%; right:0; transform:translateY(-50%);" />
+    <img src="mask.png" style="bottom:0; left:50%; transform:translateX(-50%);" />
+    <img src="mask.png" style="top:50%; left:0; transform:translateY(-50%);" />
+  </div>
+
+  <a href="https://x.com/TheExitLOL" target="_blank" class="twitter">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg" alt="X logo">
+  </a>
+</body>
+</html>
