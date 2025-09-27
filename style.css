@@ -1,0 +1,89 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: "Courier New", monospace;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Main title */
+h1 {
+  font-size: 4rem;
+  letter-spacing: 0.3rem;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+h1:hover {
+  text-shadow: 0 0 20px #fff;
+  transform: scale(1.05);
+}
+
+/* Orbit container */
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin: -200px 0 0 -200px;
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+  z-index: 1;
+}
+
+/* Masks inside orbit */
+.mask {
+  position: absolute;
+  width: 80px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.mask:hover {
+  filter: drop-shadow(0 0 15px #fff);
+  transform: scale(1.1);
+}
+
+/* Positioning masks */
+.mask.top { top: 0; left: 50%; transform: translateX(-50%); }
+.mask.right { top: 50%; right: 0; transform: translateY(-50%); }
+.mask.bottom { bottom: 0; left: 50%; transform: translateX(-50%); }
+.mask.left { top: 50%; left: 0; transform: translateY(-50%); }
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Twitter logo */
+.twitter {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+.twitter:hover {
+  filter: drop-shadow(0 0 15px #fff);
+  transform: scale(1.2);
+}
+.twitter img {
+  width: 100%;
+  height: 100%;
+}
